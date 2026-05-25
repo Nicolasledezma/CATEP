@@ -32,3 +32,13 @@ class CatepApp extends StatelessWidget {
     );
   }
 }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: 'TU_SUPABASE_URL',
+    anonKey: 'TU_SUPABASE_ANON_KEY',
+  );
+
+  runApp(const MyApp());
+}
